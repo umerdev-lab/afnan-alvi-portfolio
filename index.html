@@ -1,0 +1,2432 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afnan Alvi — AI Specialist, Designer & Business Strategist</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepBlack: '#080808',
+                        richCharcoal: '#121212',
+                        panelCharcoal: '#18181a',
+                        metallicGold: '#D4AF37',
+                        goldHover: '#E5C158',
+                        electricBlue: '#3B82F6',
+                        offWhite: '#F5F5F7',
+                        mutedGray: '#8A8A8E'
+                    },
+                    fontFamily: {
+                        display: ['"Anton"', '"League Spartan"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&family=League+Spartan:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            background-color: #080808;
+            color: #F5F5F7;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            cursor: default;
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                cursor: none;
+            }
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080808;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a2a;
+            border-radius: 3px;
+            transition: background 0.3s ease;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+
+        /* Custom Cursor */
+        #custom-cursor {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: transform 0.15s ease-out, width 0.2s, height 0.2s, background-color 0.2s;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Grid Background Pattern */
+        .bg-grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 50px -10px rgba(212, 175, 55, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .blue-glow {
+            box-shadow: 0 0 50px -10px rgba(59, 130, 246, 0.15);
+            transition: box-shadow 0.3s ease;
+        }
+
+        /* Text Stroke Utilities */
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(245, 245, 247, 0.2);
+            color: transparent;
+            transition: all 0.4s ease;
+        }
+        .text-outline:hover {
+            -webkit-text-stroke: 1px #D4AF37;
+            color: #D4AF37;
+        }
+
+        /* Glassmorphism card */
+        .glass-panel {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-panel:hover {
+            transform: translateY(-2px);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+        
+        .glass-panel-gold {
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effects */
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Image Hover Effects */
+        .image-zoom-container {
+            overflow: hidden;
+        }
+        .image-zoom {
+            transition: transform 0.5s ease;
+        }
+        .image-zoom-container:hover .image-zoom {
+            transform: scale(1.1);
+        }
+
+        /* Link Underline Animation */
+        .link-underline {
+            position: relative;
+        }
+        .link-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: #D4AF37;
+            transition: width 0.3s ease;
+        }
+        .link-underline:hover::after {
+            width: 100%;
+        }
+
+        /* Scroll Reveal Animation */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .scroll-reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scroll-reveal-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .scroll-reveal-right.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulse-slow 8s ease-in-out infinite;
+        }
+
+        /* Button Micro-interactions */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Card Stack Animation */
+        .card-stack {
+            transition: all 0.3s ease;
+        }
+        .card-stack:hover {
+            transform: translateY(-8px) scale(1.02);
+        }
+
+        /* Parallax Elements */
+        .parallax {
+            transition: transform 0.5s ease-out;
+        }
+
+        /* ============================================
+           PREMIUM SCROLL ANIMATION SYSTEM
+           ============================================ */
+
+        /* Scroll Progress Indicator */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, #D4AF37, #E5C158);
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Base Animation Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+        }
+
+        /* Fade Up Animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .fade-up.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Fade Down Animation */
+        .fade-down {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
+
+        .fade-down.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Fade Left Animation */
+        .fade-left {
+            opacity: 0;
+            transform: translateX(-40px);
+        }
+
+        .fade-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Fade Right Animation */
+        .fade-right {
+            opacity: 0;
+            transform: translateX(40px);
+        }
+
+        .fade-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Scale In Animation */
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.92);
+        }
+
+        .scale-in.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Blur to Sharp Animation */
+        .blur-in {
+            opacity: 0;
+            filter: blur(8px);
+        }
+
+        .blur-in.animated {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        /* Stagger Animation Support */
+        .stagger-1 { transition-delay: 80ms; }
+        .stagger-2 { transition-delay: 160ms; }
+        .stagger-3 { transition-delay: 240ms; }
+        .stagger-4 { transition-delay: 320ms; }
+        .stagger-5 { transition-delay: 400ms; }
+        .stagger-6 { transition-delay: 480ms; }
+
+        /* Hero Animation */
+        .hero-animate-1 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+        }
+
+        .hero-animate-2 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
+        }
+
+        .hero-animate-3 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.6s forwards;
+        }
+
+        .hero-animate-4 {
+            opacity: 0;
+            transform: translateY(30px) scale(0.96);
+            animation: heroImageAppear 1s cubic-bezier(0.22, 1, 0.36, 1) 0.8s forwards;
+        }
+
+        @keyframes heroFadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes heroImageAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Image Reveal Animation */
+        .image-reveal {
+            opacity: 0;
+            transform: scale(1.05);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .image-reveal.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Smooth Parallax */
+        .parallax-slow {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
+        }
+
+        /* Navbar Scroll Enhancement */
+        .navbar-scrolled {
+            background: rgba(8, 8, 8, 0.95) !important;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Heading Animation */
+        .section-label {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .section-label.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-heading {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+        }
+
+        .section-heading.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-description {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+        }
+
+        .section-description.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Entrance Animation Enhancement */
+        .card-entrance {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .card-entrance.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .fade-up,
+            .fade-down,
+            .fade-left,
+            .fade-right {
+                transform: translateY(20px);
+            }
+
+            .fade-up.animated,
+            .fade-down.animated,
+            .fade-left.animated,
+            .fade-right.animated {
+                transform: translateY(0);
+            }
+
+            .parallax-slow {
+                transform: none !important;
+            }
+
+            .hero-animate-1,
+            .hero-animate-2,
+            .hero-animate-3,
+            .hero-animate-4 {
+                animation-duration: 0.6s;
+            }
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .parallax-slow {
+                transform: none !important;
+            }
+
+            .animate-on-scroll,
+            .fade-up,
+            .fade-down,
+            .fade-left,
+            .fade-right,
+            .scale-in,
+            .blur-in {
+                opacity: 1 !important;
+                transform: none !important;
+                filter: none !important;
+            }
+
+            .hero-animate-1,
+            .hero-animate-2,
+            .hero-animate-3,
+            .hero-animate-4 {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+        }
+
+        /* Performance Optimizations */
+        .animate-on-scroll,
+        .fade-up,
+        .fade-down,
+        .fade-left,
+        .fade-right,
+        .scale-in,
+        .blur-in,
+        .parallax-slow {
+            will-change: opacity, transform;
+        }
+
+        .animated {
+            will-change: auto;
+        }
+
+        /* Responsive Enhancements */
+        @media (max-width: 1536px) {
+            .max-w-7xl {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+        }
+
+        @media (max-width: 1280px) {
+            h1 {
+                font-size: clamp(2.5rem, 8vw, 5rem);
+            }
+            h2 {
+                font-size: clamp(2rem, 6vw, 3.75rem);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .glass-panel {
+                padding: 1.5rem;
+            }
+            
+            .card-stack {
+                padding: 1.5rem;
+            }
+
+            /* Better text alignment on tablets */
+            .text-right {
+                text-align: left !important;
+            }
+            
+            .lg\:text-left {
+                text-align: left !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                cursor: default;
+            }
+            
+            #custom-cursor {
+                display: none !important;
+            }
+
+            /* Responsive Typography */
+            h1 {
+                font-size: clamp(2rem, 10vw, 3.5rem) !important;
+                line-height: 1.1 !important;
+            }
+            
+            h2 {
+                font-size: clamp(1.75rem, 8vw, 3rem) !important;
+                line-height: 1.2 !important;
+            }
+            
+            h3 {
+                font-size: clamp(1.25rem, 5vw, 1.5rem) !important;
+                line-height: 1.3 !important;
+            }
+
+            p {
+                font-size: clamp(0.875rem, 3vw, 1rem) !important;
+            }
+
+            /* Keep contact cards and footer left-aligned */
+            .contact-card-text,
+            .footer-contact-item {
+                text-align: left !important;
+            }
+
+            /* Center main headings but keep contact info left */
+            .hero-section h1,
+            .hero-section h2,
+            section > div > div > h2 {
+                text-align: center !important;
+            }
+
+            /* Adjust spacing for mobile */
+            section {
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
+            }
+
+            .glass-panel {
+                padding: 1.25rem;
+            }
+
+            /* Make cards more touch-friendly */
+            .hover-lift:active {
+                transform: translateY(-2px);
+            }
+
+            .card-stack {
+                padding: 1.25rem;
+            }
+
+            /* Ensure buttons are tap-friendly */
+            a, button {
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* Footer proper alignment */
+            footer .grid-cols-1 {
+                text-align: left !important;
+            }
+
+            footer h3 {
+                text-align: left !important;
+            }
+
+            footer nav,
+            footer ul,
+            footer .flex-col {
+                align-items: flex-start !important;
+            }
+
+            /* Better image container sizing */
+            .aspect-\[4\/3\],
+            .aspect-\[16\/10\],
+            .aspect-\[4\/5\] {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            /* Further mobile optimizations */
+            .text-6xl {
+                font-size: 2.25rem !important;
+            }
+            
+            .text-5xl {
+                font-size: 1.875rem !important;
+            }
+            
+            .text-4xl {
+                font-size: 1.625rem !important;
+            }
+
+            .text-3xl {
+                font-size: 1.5rem !important;
+            }
+
+            .text-2xl {
+                font-size: 1.25rem !important;
+            }
+
+            .text-xl {
+                font-size: 1.125rem !important;
+            }
+
+            /* Adjust grid gaps */
+            .gap-6 {
+                gap: 1rem;
+            }
+
+            .gap-8 {
+                gap: 1.25rem;
+            }
+
+            .gap-12 {
+                gap: 2rem;
+            }
+
+            /* Ensure images don't overflow */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Reduce padding on small screens */
+            .px-6 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            .px-8 {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+
+            .py-8 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Small mobile optimization */
+            h1 {
+                font-size: 1.875rem !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            h3 {
+                font-size: 1.25rem !important;
+            }
+
+            .px-6 {
+                padding-left: 0.75rem !important;
+                padding-right: 0.75rem !important;
+            }
+
+            .py-4 {
+                padding-top: 0.75rem !important;
+                padding-bottom: 0.75rem !important;
+            }
+
+            /* Ensure text doesn't overflow */
+            h1, h2, h3, h4, h5, h6 {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Smaller card padding */
+            .glass-panel {
+                padding: 1rem;
+            }
+
+            .card-stack {
+                padding: 1rem;
+            }
+
+            /* Better button sizing */
+            .px-8 {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+
+            /* Adjust font sizes for better readability */
+            .font-display {
+                letter-spacing: 0.025em !important;
+            }
+        }
+
+        /* Landscape orientation fixes */
+        @media (max-height: 600px) and (orientation: landscape) {
+            section {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+
+            .min-h-screen {
+                min-height: auto !important;
+                padding-top: 5rem;
+                padding-bottom: 2rem;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            #custom-cursor,
+            .animate-pulse,
+            .animate-spin,
+            .animate-float {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-deepBlack text-offWhite antialiased selection:bg-metallicGold selection:text-black">
+
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
+    <div id="custom-cursor" class="hidden lg:block w-8 h-8 rounded-full border border-metallicGold/60 bg-metallicGold/10 flex items-center justify-center text-[10px] font-mono text-metallicGold opacity-0 transition-opacity duration-300">
+        <span id="cursor-text"></span>
+    </div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 px-6 md:px-12" id="navbar">
+        <div class="max-w-7xl mx-auto flex items-center justify-between glass-panel px-6 py-3 rounded-2xl transition-all duration-300" id="nav-container">
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-9 h-9 rounded-xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform bg-white flex items-center justify-center">
+                    <img src="logo.jpeg" alt="Afnan Alvi Logo" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-display tracking-wider text-sm md:text-base font-bold text-offWhite">AFNAN ALVI</span>
+                    <span class="text-[10px] font-mono text-metallicGold tracking-widest uppercase">AI & Strategy</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest">
+                <a href="#about" class="text-mutedGray hover:text-metallicGold transition-all duration-300 link-underline">About</a>
+                <a href="#expertise" class="text-mutedGray hover:text-metallicGold transition-all duration-300 link-underline">Expertise</a>
+                <a href="#ai-ecosystem" class="text-mutedGray hover:text-metallicGold transition-all duration-300 link-underline">AI Core</a>
+                <a href="#work" class="text-mutedGray hover:text-metallicGold transition-all duration-300 link-underline">Projects</a>
+                <a href="#experience" class="text-mutedGray hover:text-metallicGold transition-all duration-300 link-underline">Experience</a>
+                <a href="#journey" class="text-mutedGray hover:text-metallicGold transition-all duration-300 link-underline">Journey</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-metallicGold text-black font-semibold text-xs tracking-wider uppercase hover:bg-goldHover transition-all duration-300 shadow-lg hover:shadow-metallicGold/30 transform hover:-translate-y-1 btn-primary relative z-10">
+                    <span>Let's Connect</span>
+                    <i class="fa-solid fa-arrow-right text-[10px] transform transition-transform duration-300 group-hover:translate-x-1"></i>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden text-offWhite p-2 focus:outline-none hover:text-metallicGold transition-colors duration-300">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-deepBlack/95 backdrop-blur-2xl z-40 flex flex-col items-center justify-center space-y-8 opacity-0 pointer-events-none transition-all duration-300 md:hidden">
+            <button id="mobile-menu-close" class="absolute top-6 right-6 text-offWhite text-2xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <a href="#about" class="mobile-link font-display text-2xl tracking-wider text-offWhite hover:text-metallicGold transition-colors">About Me</a>
+            <a href="#expertise" class="mobile-link font-display text-2xl tracking-wider text-offWhite hover:text-metallicGold transition-colors">Expertise</a>
+            <a href="#ai-ecosystem" class="mobile-link font-display text-2xl tracking-wider text-offWhite hover:text-metallicGold transition-colors">AI Core & Toolkit</a>
+            <a href="#work" class="mobile-link font-display text-2xl tracking-wider text-offWhite hover:text-metallicGold transition-colors">Projects</a>
+            <a href="#experience" class="mobile-link font-display text-2xl tracking-wider text-offWhite hover:text-metallicGold transition-colors">Experience</a>
+            <a href="#journey" class="mobile-link font-display text-2xl tracking-wider text-offWhite hover:text-metallicGold transition-colors">Journey</a>
+            <a href="#contact" class="mobile-link px-8 py-3 rounded-xl bg-metallicGold text-black font-semibold text-sm tracking-wider uppercase">Let's Connect</a>
+        </div>
+    </header>
+
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 md:px-12 bg-grid-pattern overflow-hidden">
+        <!-- Ambient Background Lights -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-metallicGold/5 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[30rem] h-[30rem] bg-electricBlue/5 rounded-full blur-3xl pointer-events-none animate-pulse-slow" style="animation-delay: 3s;"></div>
+
+        <div class="max-w-7xl mx-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            
+            <div class="lg:col-span-7 space-y-8 text-center lg:text-left scroll-reveal-left hero-animate-1">
+                <div class="inline-flex items-center space-x-3 px-4 py-2 rounded-full glass-panel border border-metallicGold/30 text-metallicGold text-xs font-mono tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-metallicGold animate-ping"></span>
+                    <span>Available for Select Global Projects & Collaborations</span>
+                </div>
+
+                <div class="space-y-2">
+                    <h1 class="font-display text-6xl sm:text-7xl lg:text-8xl tracking-tight leading-none text-offWhite">
+                        AFNAN <span class="text-transparent bg-clip-text bg-gradient-to-r from-metallicGold via-amber-200 to-amber-500">ALVI</span>
+                    </h1>
+                    <p class="font-display text-2xl sm:text-3xl tracking-wide text-mutedGray uppercase pt-2">
+                        AI Specialist & Strategic Designer
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 font-mono text-xs sm:text-sm text-offWhite/80">
+                    <span class="px-3 py-1 rounded-md bg-panelCharcoal border border-white/10">AI</span>
+                    <span class="text-metallicGold">•</span>
+                    <span class="px-3 py-1 rounded-md bg-panelCharcoal border border-white/10">DESIGN</span>
+                    <span class="text-metallicGold">•</span>
+                    <span class="px-3 py-1 rounded-md bg-panelCharcoal border border-white/10">SALES</span>
+                    <span class="text-metallicGold">•</span>
+                    <span class="px-3 py-1 rounded-md bg-panelCharcoal border border-white/10">BUSINESS</span>
+                    <span class="text-metallicGold">•</span>
+                    <span class="px-3 py-1 rounded-md bg-panelCharcoal border border-white/10">PAKISTAN</span>
+                </div>
+
+                <p class="text-base sm:text-lg text-mutedGray max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+                    Bridging artificial intelligence, high-end graphic design, and rigorous commercial execution. Crafting modern digital experiences and enterprise workflows with precision.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#work" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-metallicGold text-black font-semibold text-sm tracking-widest uppercase hover:bg-goldHover transition-all duration-300 shadow-xl shadow-metallicGold/10 hover:shadow-metallicGold/30 flex items-center justify-center space-x-3 group btn-primary relative overflow-hidden">
+                        <span class="relative z-10">Explore Selected Work</span>
+                        <i class="fa-solid fa-arrow-down text-xs transform group-hover:translate-y-1 transition-transform duration-300 relative z-10"></i>
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-offWhite font-semibold text-sm tracking-widest uppercase hover:border-metallicGold/50 transition-all duration-300 flex items-center justify-center space-x-3 hover-lift">
+                        <span>Get In Touch</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Portrait / Immersive AI Composition -->
+            <div class="lg:col-span-5 relative flex justify-center scroll-reveal-right hero-animate-4">
+                <div class="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden glass-panel-gold gold-glow p-3 group hover-lift image-reveal">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-transparent to-transparent z-10 opacity-60"></div>
+                    
+                    <!-- Professional Portrait Placeholder -->
+                    <div class="w-full h-full rounded-2xl overflow-hidden relative bg-gradient-to-b from-panelCharcoal to-deepBlack image-zoom-container border border-white/10">
+                        <!-- Professional Image -->
+                        <img src="img.jpeg" 
+                             alt="Afnan Alvi - AI Specialist and Strategic Designer" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        
+                        <!-- Fallback Content (shown if image fails to load) -->
+                        <div style="display: none;" class="w-full h-full absolute inset-0">
+                            <div class="absolute inset-0 bg-grid-pattern opacity-30"></div>
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="w-64 h-64 rounded-full border border-metallicGold/20 animate-spin" style="animation-duration: 30s;"></div>
+                                <div class="absolute w-48 h-48 rounded-full border border-electricBlue/20 animate-spin" style="animation-duration: 20s; animation-direction: reverse;"></div>
+                            </div>
+                            <div class="relative z-20 text-center p-8 space-y-4 flex flex-col items-center justify-center h-full">
+                                <div class="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-tr from-metallicGold/20 to-electricBlue/20 border border-metallicGold/40 flex items-center justify-center shadow-2xl backdrop-blur-md">
+                                    <i class="fa-solid fa-fingerprint text-4xl text-metallicGold"></i>
+                                </div>
+                                <div class="space-y-1">
+                                    <h3 class="font-display text-xl tracking-wider text-offWhite">AFNAN ALVI</h3>
+                                    <p class="text-xs font-mono text-metallicGold uppercase tracking-widest">Authorized Professional Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute bottom-6 left-6 right-6 z-20 glass-panel p-4 rounded-xl border border-metallicGold/30 flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
+                            <span class="text-xs font-mono uppercase tracking-wider text-offWhite">Status: Active & Ready</span>
+                        </div>
+                        <span class="text-xs font-mono text-metallicGold">Pakistan</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="py-28 px-6 md:px-12 bg-richCharcoal relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>01 / Identity & Background</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-5xl tracking-tight text-offWhite uppercase leading-tight">
+                        DESIGNING THE INTERSECTION OF <span class="text-metallicGold">AI & COMMERCE</span>.
+                    </h2>
+                    <div class="space-y-4 text-mutedGray text-base sm:text-lg font-light leading-relaxed">
+                        <p>
+                            “I am an AI Specialist with practical experience across artificial intelligence, digital content creation, graphic design, social media management, sales, and business operations. I combine technology, creativity, and business understanding to create practical digital solutions and professional visual content.”
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 group card-stack scroll-reveal">
+                        <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-brain text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">AI Systems & Workflow</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed">
+                            Implementing advanced prompt engineering, automated digital workflows, and intelligent productivity frameworks.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 group card-stack scroll-reveal" style="animation-delay: 0.1s;">
+                        <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-pen-nib text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Graphic Design & Canva</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed">
+                            3–4 years of specialized creative output in social media design, marketing creatives, and brand presentation.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 group card-stack scroll-reveal" style="animation-delay: 0.2s;">
+                        <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Sales & Operations</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed">
+                            Extensive commercial experience managing customer dealing, lead generation, and dispatch operations at Lexton Logistics & Pak Car Bazar.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 group card-stack scroll-reveal" style="animation-delay: 0.3s;">
+                        <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fa-solid fa-graduation-cap text-xl"></i>
+                        </div>
+                        <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Academic Foundation</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed">
+                            Associate Degree Program in Computer Science (ADPCS) from the University of Central Punjab.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="py-28 px-6 md:px-12 bg-deepBlack border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>02 / Professional Core</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-6xl tracking-tight text-offWhite uppercase">
+                        INTERACTIVE <span class="text-metallicGold">IDENTITY SYSTEM</span>
+                    </h2>
+                </div>
+                <p class="text-mutedGray max-w-md text-sm font-light">
+                    Select a professional discipline below to explore the specialized competencies and operational focus areas.
+                </p>
+            </div>
+
+            <!-- Identity System Tabs Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Navigation Tabs -->
+                <div class="lg:col-span-5 space-y-4" id="identity-tabs">
+                    <button onclick="switchIdentity(0)" class="identity-tab w-full text-left p-6 rounded-2xl glass-panel border border-metallicGold/40 transition-all flex items-center justify-between group active-tab">
+                        <div class="flex items-center space-x-4">
+                            <span class="font-mono text-metallicGold text-sm">01</span>
+                            <span class="font-display text-xl tracking-wider text-offWhite uppercase group-hover:text-metallicGold transition-colors">AI SPECIALIST</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-metallicGold opacity-100 transition-opacity"></i>
+                    </button>
+
+                    <button onclick="switchIdentity(1)" class="identity-tab w-full text-left p-6 rounded-2xl glass-panel border border-white/10 transition-all flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <span class="font-mono text-mutedGray text-sm">02</span>
+                            <span class="font-display text-xl tracking-wider text-offWhite uppercase group-hover:text-metallicGold transition-colors">GRAPHIC DESIGNER</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-metallicGold opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+
+                    <button onclick="switchIdentity(2)" class="identity-tab w-full text-left p-6 rounded-2xl glass-panel border border-white/10 transition-all flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <span class="font-mono text-mutedGray text-sm">03</span>
+                            <span class="font-display text-xl tracking-wider text-offWhite uppercase group-hover:text-metallicGold transition-colors">SALES PROFESSIONAL</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-metallicGold opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+
+                    <button onclick="switchIdentity(3)" class="identity-tab w-full text-left p-6 rounded-2xl glass-panel border border-white/10 transition-all flex items-center justify-between group">
+                        <div class="flex items-center space-x-4">
+                            <span class="font-mono text-mutedGray text-sm">04</span>
+                            <span class="font-display text-xl tracking-wider text-offWhite uppercase group-hover:text-metallicGold transition-colors">BUSINESS & SOCIAL MEDIA MGR</span>
+                        </div>
+                        <i class="fa-solid fa-arrow-right text-metallicGold opacity-0 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+                </div>
+
+                <!-- Dynamic Detail Display -->
+                <div class="lg:col-span-7 glass-panel-gold p-8 sm:p-12 rounded-3xl min-h-[420px] flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-metallicGold/5 rounded-full blur-3xl pointer-events-none"></div>
+                    
+                    <div id="identity-content" class="space-y-6 relative z-10">
+                        <div class="inline-block px-3 py-1 rounded-md bg-metallicGold/20 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                            Primary Focus Area
+                        </div>
+                        <h3 id="id-title" class="font-display text-3xl sm:text-4xl text-offWhite uppercase">AI SPECIALIST</h3>
+                        <p id="id-desc" class="text-mutedGray text-base sm:text-lg font-light leading-relaxed">
+                            Leveraging advanced artificial intelligence tools, prompt engineering methodologies, and workflow automation to accelerate business productivity, creative execution, and digital solutions.
+                        </p>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10" id="id-tags">
+                            <div class="p-3 rounded-xl bg-panelCharcoal border border-white/10">
+                                <span class="text-[10px] font-mono text-metallicGold block uppercase">Capability</span>
+                                <span class="text-xs text-offWhite font-semibold">Prompt Engineering</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-panelCharcoal border border-white/10">
+                                <span class="text-[10px] font-mono text-metallicGold block uppercase">Capability</span>
+                                <span class="text-xs text-offWhite font-semibold">Workflow Automation</span>
+                            </div>
+                            <div class="p-3 rounded-xl bg-panelCharcoal border border-white/10">
+                                <span class="text-[10px] font-mono text-metallicGold block uppercase">Capability</span>
+                                <span class="text-xs text-offWhite font-semibold">Creative AI Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 flex items-center justify-between text-xs font-mono text-mutedGray border-t border-white/10 mt-8">
+                        <span>AFNAN ALVI — SYSTEM MODULE</span>
+                        <span class="text-metallicGold">VERIFIED PROFILE</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="ai-ecosystem" class="py-28 px-6 md:px-12 bg-richCharcoal border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>03 / AI Architecture</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-6xl tracking-tight text-offWhite uppercase">
+                        AI <span class="text-metallicGold">EXPERTISE ECOSYSTEM</span>
+                    </h2>
+                </div>
+                <p class="text-mutedGray max-w-md text-sm font-light">
+                    An advanced matrix of artificial intelligence proficiencies designed to optimize operational efficiency and digital output.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all duration-300 group card-stack scroll-reveal">
+                    <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-network-wired text-lg"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Workflow Automation</h3>
+                    <p class="text-mutedGray text-xs sm:text-sm font-light leading-relaxed">
+                        Streamlining repetitive tasks and business processes through intelligent system integrations.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all duration-300 group card-stack scroll-reveal" style="animation-delay: 0.1s;">
+                    <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-terminal text-lg"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Prompt Engineering</h3>
+                    <p class="text-mutedGray text-xs sm:text-sm font-light leading-relaxed">
+                        Crafting precise instructions and context models to maximize LLM and generative model accuracy.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all duration-300 group card-stack scroll-reveal" style="animation-delay: 0.2s;">
+                    <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-wand-magic-sparkles text-lg"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Creative AI & Design</h3>
+                    <p class="text-mutedGray text-xs sm:text-sm font-light leading-relaxed">
+                        Integrating AI-assisted design pipelines with traditional graphic standards for rapid asset generation.
+                    </p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all duration-300 group card-stack scroll-reveal" style="animation-delay: 0.3s;">
+                    <div class="w-12 h-12 rounded-2xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fa-solid fa-bolt text-lg"></i>
+                    </div>
+                    <h3 class="font-display text-xl text-offWhite tracking-wide mb-2 uppercase">Digital Productivity</h3>
+                    <p class="text-mutedGray text-xs sm:text-sm font-light leading-relaxed">
+                        Deploying next-generation digital tools to elevate personal and corporate output velocity.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="graphic-design" class="py-28 px-6 md:px-12 bg-deepBlack border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div class="space-y-4 text-center md:text-left flex-1">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest justify-center md:justify-start w-full md:w-auto">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>04 / Visual Arts & Branding</span>
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-offWhite uppercase leading-tight">
+                        GRAPHIC DESIGN <span class="text-metallicGold">GALLERY</span>
+                    </h2>
+                </div>
+                <div class="text-center md:text-right flex-shrink-0">
+                    <span class="font-display text-xl sm:text-2xl text-metallicGold block mb-1">3–4 YEARS</span>
+                    <span class="text-[10px] sm:text-xs font-mono text-mutedGray uppercase tracking-wider block max-w-xs mx-auto md:mx-0">Specialized Experience • Canva & Professional Visuals</span>
+                </div>
+            </div>
+
+            <!-- Masonry Grid Gallery with Real Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Card 1: Social Media Design -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group relative aspect-[4/3] flex flex-col justify-end p-6 sm:p-8 image-zoom-container scroll-reveal card-stack transition-all duration-300">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&h=600&fit=crop&q=80" 
+                         alt="Social Media Design - Instagram Posts" 
+                         class="absolute inset-0 w-full h-full object-cover image-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-deepBlack/70 to-transparent z-10"></div>
+                    <div class="relative z-20 space-y-2 text-left">
+                        <span class="text-[9px] sm:text-[10px] font-mono text-metallicGold uppercase tracking-widest px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 inline-block">Social Media Design</span>
+                        <h3 class="font-display text-lg sm:text-xl text-offWhite uppercase leading-tight">Instagram & Brand Posts</h3>
+                        <p class="text-mutedGray text-[11px] sm:text-xs font-light leading-relaxed">High-conversion promotional graphics and feed composition.</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Branding & Logo Design -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group relative aspect-[4/3] flex flex-col justify-end p-6 sm:p-8 image-zoom-container scroll-reveal card-stack transition-all duration-300" style="animation-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop&q=80" 
+                         alt="Brand Identity & Logo Design" 
+                         class="absolute inset-0 w-full h-full object-cover image-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-deepBlack/70 to-transparent z-10"></div>
+                    <div class="relative z-20 space-y-2 text-left">
+                        <span class="text-[9px] sm:text-[10px] font-mono text-metallicGold uppercase tracking-widest px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 inline-block">Branding & Logo</span>
+                        <h3 class="font-display text-lg sm:text-xl text-offWhite uppercase leading-tight">Brand Identity Design</h3>
+                        <p class="text-mutedGray text-[11px] sm:text-xs font-light leading-relaxed">Professional logo design and brand visual systems.</p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Video & Reels Covers -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group relative aspect-[4/3] flex flex-col justify-end p-6 sm:p-8 image-zoom-container scroll-reveal card-stack transition-all duration-300" style="animation-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1626785774625-0b1c2c4eab67?w=800&h=600&fit=crop&q=80" 
+                         alt="Video Marketing & Reels Covers" 
+                         class="absolute inset-0 w-full h-full object-cover image-zoom">
+                    <div class="absolute inset-0 bg-gradient-to-t from-deepBlack via-deepBlack/70 to-transparent z-10"></div>
+                    <div class="relative z-20 space-y-2 text-left">
+                        <span class="text-[9px] sm:text-[10px] font-mono text-metallicGold uppercase tracking-widest px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 inline-block">Reels & Video Covers</span>
+                        <h3 class="font-display text-lg sm:text-xl text-offWhite uppercase leading-tight">Digital Marketing Creatives</h3>
+                        <p class="text-mutedGray text-[11px] sm:text-xs font-light leading-relaxed">Engaging thumbnails and promotional video covers.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Projects / Selected Work Section -->
+    <section id="work" class="py-20 sm:py-28 px-6 md:px-12 bg-richCharcoal border-t border-white/5 relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-electricBlue/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto space-y-12 sm:space-y-16 relative z-10">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 scroll-reveal">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>Selected Projects & Client Work</span>
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-offWhite uppercase leading-tight">
+                        FEATURED <span class="text-metallicGold">PROJECTS</span>
+                    </h2>
+                </div>
+                <p class="text-mutedGray max-w-md text-sm font-light">
+                    Showcasing recent digital solutions, design projects, and enterprise collaborations across AI, web development, and creative services.
+                </p>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                
+                <!-- Project Card 1: E-commerce Platform -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group transition-all duration-300 card-stack scroll-reveal flex flex-col">
+                    <div class="relative aspect-[16/10] overflow-hidden image-zoom-container bg-panelCharcoal">
+                        <img src="https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop&q=80" 
+                             alt="E-commerce Platform Development" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full absolute inset-0 bg-gradient-to-br from-panelCharcoal to-deepBlack items-center justify-center">
+                            <i class="fa-solid fa-shopping-cart text-6xl text-metallicGold/20"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider">E-commerce</span>
+                            <span class="px-2.5 py-1 rounded-md bg-panelCharcoal border border-white/10 text-mutedGray text-[10px] font-mono">Web Development</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide mb-3 group-hover:text-metallicGold transition-colors duration-300">Modern E-commerce Platform</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed mb-6 flex-grow">
+                            Full-stack online shopping solution with AI-powered product recommendations, inventory management, and secure payment integration.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-mono text-mutedGray">React</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Node.js</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">AI Integration</span>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center space-x-2 text-metallicGold text-sm font-semibold tracking-wider uppercase group/link">
+                            <span class="relative link-underline">View Project</span>
+                            <i class="fa-solid fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: AI Automation Tool -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group transition-all duration-300 card-stack scroll-reveal flex flex-col" style="animation-delay: 0.1s;">
+                    <div class="relative aspect-[16/10] overflow-hidden image-zoom-container bg-panelCharcoal">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop&q=80" 
+                             alt="AI Workflow Automation System" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full absolute inset-0 bg-gradient-to-br from-panelCharcoal to-deepBlack items-center justify-center">
+                            <i class="fa-solid fa-robot text-6xl text-metallicGold/20"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider">AI / Automation</span>
+                            <span class="px-2.5 py-1 rounded-md bg-panelCharcoal border border-white/10 text-mutedGray text-[10px] font-mono">Enterprise</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide mb-3 group-hover:text-metallicGold transition-colors duration-300">AI Workflow Automation</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed mb-6 flex-grow">
+                            Intelligent automation system leveraging GPT models and prompt engineering to streamline business operations and reduce manual workload.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-mono text-mutedGray">OpenAI</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Python</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Automation</span>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center space-x-2 text-metallicGold text-sm font-semibold tracking-wider uppercase group/link">
+                            <span class="relative link-underline">View Project</span>
+                            <i class="fa-solid fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Brand Identity Design -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group transition-all duration-300 card-stack scroll-reveal flex flex-col" style="animation-delay: 0.2s;">
+                    <div class="relative aspect-[16/10] overflow-hidden image-zoom-container bg-panelCharcoal">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&h=600&fit=crop&q=80" 
+                             alt="Corporate Brand Identity Design" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full absolute inset-0 bg-gradient-to-br from-panelCharcoal to-deepBlack items-center justify-center">
+                            <i class="fa-solid fa-palette text-6xl text-metallicGold/20"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider">Branding</span>
+                            <span class="px-2.5 py-1 rounded-md bg-panelCharcoal border border-white/10 text-mutedGray text-[10px] font-mono">Design</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide mb-3 group-hover:text-metallicGold transition-colors duration-300">Corporate Brand Identity</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed mb-6 flex-grow">
+                            Comprehensive brand identity system including logo design, color palette, typography, and marketing collateral for growing enterprise.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-mono text-mutedGray">Canva</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Illustrator</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Branding</span>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center space-x-2 text-metallicGold text-sm font-semibold tracking-wider uppercase group/link">
+                            <span class="relative link-underline">View Project</span>
+                            <i class="fa-solid fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Mobile App UI/UX -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group transition-all duration-300 card-stack scroll-reveal flex flex-col" style="animation-delay: 0.1s;">
+                    <div class="relative aspect-[16/10] overflow-hidden image-zoom-container bg-panelCharcoal">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop&q=80" 
+                             alt="Mobile App Design" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full absolute inset-0 bg-gradient-to-br from-panelCharcoal to-deepBlack items-center justify-center">
+                            <i class="fa-solid fa-mobile-screen text-6xl text-metallicGold/20"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider">Mobile App</span>
+                            <span class="px-2.5 py-1 rounded-md bg-panelCharcoal border border-white/10 text-mutedGray text-[10px] font-mono">UI/UX</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide mb-3 group-hover:text-metallicGold transition-colors duration-300">Delivery App Interface</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed mb-6 flex-grow">
+                            User-centered mobile application design with seamless navigation, real-time tracking, and intuitive ordering experience for logistics platform.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-mono text-mutedGray">Figma</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">React Native</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">UX Design</span>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center space-x-2 text-metallicGold text-sm font-semibold tracking-wider uppercase group/link">
+                            <span class="relative link-underline">View Project</span>
+                            <i class="fa-solid fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 5: Digital Marketing Campaign -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group transition-all duration-300 card-stack scroll-reveal flex flex-col" style="animation-delay: 0.2s;">
+                    <div class="relative aspect-[16/10] overflow-hidden image-zoom-container bg-panelCharcoal">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80" 
+                             alt="Digital Marketing Campaign" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full absolute inset-0 bg-gradient-to-br from-panelCharcoal to-deepBlack items-center justify-center">
+                            <i class="fa-solid fa-bullhorn text-6xl text-metallicGold/20"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider">Digital Marketing</span>
+                            <span class="px-2.5 py-1 rounded-md bg-panelCharcoal border border-white/10 text-mutedGray text-[10px] font-mono">Social Media</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide mb-3 group-hover:text-metallicGold transition-colors duration-300">Social Media Campaign</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed mb-6 flex-grow">
+                            Multi-platform digital marketing strategy with AI-powered content creation, targeting optimization, and performance analytics for automotive brand.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-mono text-mutedGray">Instagram</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Facebook</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Content Strategy</span>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center space-x-2 text-metallicGold text-sm font-semibold tracking-wider uppercase group/link">
+                            <span class="relative link-underline">View Project</span>
+                            <i class="fa-solid fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 6: Business Dashboard -->
+                <div class="glass-panel rounded-3xl overflow-hidden border border-white/10 hover:border-metallicGold/40 group transition-all duration-300 card-stack scroll-reveal flex flex-col" style="animation-delay: 0.3s;">
+                    <div class="relative aspect-[16/10] overflow-hidden image-zoom-container bg-panelCharcoal">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80" 
+                             alt="Business Analytics Dashboard" 
+                             class="w-full h-full object-cover image-zoom"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden w-full h-full absolute inset-0 bg-gradient-to-br from-panelCharcoal to-deepBlack items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-6xl text-metallicGold/20"></i>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-deepBlack/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 sm:p-8 flex flex-col flex-grow">
+                        <div class="flex items-center gap-2 mb-3 flex-wrap">
+                            <span class="px-2.5 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider">Software</span>
+                            <span class="px-2.5 py-1 rounded-md bg-panelCharcoal border border-white/10 text-mutedGray text-[10px] font-mono">Data Analytics</span>
+                        </div>
+                        <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide mb-3 group-hover:text-metallicGold transition-colors duration-300">Business Intelligence Dashboard</h3>
+                        <p class="text-mutedGray text-sm font-light leading-relaxed mb-6 flex-grow">
+                            Real-time analytics dashboard with interactive data visualization, KPI tracking, and automated reporting for enterprise decision-making.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-[10px] font-mono text-mutedGray">Vue.js</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">D3.js</span>
+                            <span class="text-metallicGold">•</span>
+                            <span class="text-[10px] font-mono text-mutedGray">Analytics</span>
+                        </div>
+                        <a href="#contact" class="inline-flex items-center space-x-2 text-metallicGold text-sm font-semibold tracking-wider uppercase group/link">
+                            <span class="relative link-underline">View Project</span>
+                            <i class="fa-solid fa-arrow-right text-xs transform group-hover/link:translate-x-1 transition-transform duration-300"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center pt-8 scroll-reveal">
+                <p class="text-mutedGray text-sm mb-6">Interested in working together on your next project?</p>
+                <a href="#contact" class="inline-flex items-center space-x-2 px-8 py-4 rounded-xl bg-metallicGold text-black font-semibold text-sm tracking-widest uppercase hover:bg-goldHover transition-all duration-300 shadow-xl shadow-metallicGold/10 hover:shadow-metallicGold/30 btn-primary relative overflow-hidden group">
+                    <span class="relative z-10">Let's Collaborate</span>
+                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform duration-300 relative z-10"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="pak-car-bazar" class="py-28 px-6 md:px-12 bg-deepBlack border-t border-white/5 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-metallicGold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto space-y-16 relative z-10">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>05 / Automotive Enterprise Case Study</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-6xl tracking-tight text-offWhite uppercase">
+                        PAK CAR <span class="text-metallicGold">BAZAR</span>
+                    </h2>
+                </div>
+                <div class="text-right">
+                    <span class="font-display text-2xl text-offWhite block">APPROX. 2 YEARS</span>
+                    <span class="text-xs font-mono text-metallicGold uppercase tracking-wider">Role: Manager / Social Media Manager</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 space-y-6">
+                    <h3 class="font-display text-2xl sm:text-3xl text-offWhite uppercase tracking-wide">
+                        OPERATIONAL LEADERSHIP & AUTOMOTIVE COMMERCE
+                    </h3>
+                    <p class="text-mutedGray text-base font-light leading-relaxed">
+                        Directed day-to-day business operations, customer relationship management, vehicle sales execution, and digital marketing strategies to maximize market presence and operational fluidity.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-2xl glass-panel border border-white/10 flex items-center space-x-4">
+                            <i class="fa-solid fa-car text-metallicGold text-xl"></i>
+                            <div>
+                                <span class="text-xs font-mono text-mutedGray block uppercase">Focus</span>
+                                <span class="text-offWhite font-semibold text-sm">Vehicle Sales & Dealing</span>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-2xl glass-panel border border-white/10 flex items-center space-x-4">
+                            <i class="fa-solid fa-bullhorn text-metallicGold text-xl"></i>
+                            <div>
+                                <span class="text-xs font-mono text-mutedGray block uppercase">Focus</span>
+                                <span class="text-offWhite font-semibold text-sm">Social Media & Marketing</span>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-2xl glass-panel border border-white/10 flex items-center space-x-4">
+                            <i class="fa-solid fa-globe text-metallicGold text-xl"></i>
+                            <div>
+                                <span class="text-xs font-mono text-mutedGray block uppercase">Focus</span>
+                                <span class="text-offWhite font-semibold text-sm">Website Management</span>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-2xl glass-panel border border-white/10 flex items-center space-x-4">
+                            <i class="fa-solid fa-briefcase text-metallicGold text-xl"></i>
+                            <div>
+                                <span class="text-xs font-mono text-mutedGray block uppercase">Focus</span>
+                                <span class="text-offWhite font-semibold text-sm">Business Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="glass-panel-gold p-8 sm:p-12 rounded-3xl relative overflow-hidden space-y-8">
+                        <div class="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                        <div class="relative z-20 space-y-4">
+                            <span class="text-xs font-mono text-metallicGold uppercase tracking-widest block">Executive Summary</span>
+                            <h4 class="font-display text-2xl text-offWhite uppercase">Comprehensive Management</h4>
+                            <p class="text-mutedGray text-sm font-light leading-relaxed">
+                                Managed promotional content creation, client negotiation, and complete digital identity alignment for high-end automotive inventory.
+                            </p>
+                        </div>
+                        <div class="relative z-20 pt-6 border-t border-white/10 flex items-center justify-between font-mono text-xs text-mutedGray">
+                            <span>PAKISTAN MARKET</span>
+                            <span class="text-metallicGold">VERIFIED EXPERIENCE</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="lexton-logistics" class="py-28 px-6 md:px-12 bg-deepBlack border-t border-white/5 relative">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>06 / Supply Chain & Freight Operations</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-6xl tracking-tight text-offWhite uppercase">
+                        LEXTON <span class="text-metallicGold">LOGISTICS</span>
+                    </h2>
+                </div>
+                <div class="text-right">
+                    <span class="font-display text-2xl text-offWhite block">APPROX. 1 YEAR</span>
+                    <span class="text-xs font-mono text-metallicGold uppercase tracking-wider">Role: Truck Dispatcher / Sales Agent</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-6 glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 space-y-6">
+                    <span class="text-xs font-mono text-metallicGold uppercase tracking-widest block">Operational Rigor</span>
+                    <h3 class="font-display text-2xl sm:text-3xl text-offWhite uppercase tracking-wide">
+                        FREIGHT DISPATCH & SALES EXECUTION
+                    </h3>
+                    <p class="text-mutedGray text-sm sm:text-base font-light leading-relaxed">
+                        Handled complex truck dispatching operations, maintained continuous communication with drivers and corporate clients, generated high-value leads, and executed commercial negotiations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="px-3 py-1.5 rounded-lg bg-panelCharcoal border border-white/10 text-xs font-mono text-offWhite">Truck Dispatching</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-panelCharcoal border border-white/10 text-xs font-mono text-offWhite">Driver Communication</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-panelCharcoal border border-white/10 text-xs font-mono text-offWhite">Lead Generation</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-panelCharcoal border border-white/10 text-xs font-mono text-offWhite">Negotiation</span>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h4 class="font-display text-lg text-offWhite uppercase">Dispatch Operations</h4>
+                        <p class="text-mutedGray text-xs font-light">Precision routing, real-time tracking coordination, and driver support.</p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/10 space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-metallicGold/10 border border-metallicGold/30 flex items-center justify-center text-metallicGold">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h4 class="font-display text-lg text-offWhite uppercase">Client Relations</h4>
+                        <p class="text-mutedGray text-xs font-light">Managing stakeholder agreements, customer inquiries, and dispute resolution.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills" class="py-28 px-6 md:px-12 bg-richCharcoal border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>07 / Commercial Proficiency</span>
+                    </div>
+                    <h2 class="font-display text-4xl sm:text-6xl tracking-tight text-offWhite uppercase">
+                        BUSINESS & SALES <span class="text-metallicGold">SKILLS</span>
+                    </h2>
+                </div>
+                <p class="text-mutedGray max-w-md text-sm font-light">
+                    Core commercial competencies acquired through hands-on enterprise management and market execution.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all space-y-4">
+                    <span class="font-mono text-metallicGold text-xs">01 / STRATEGY</span>
+                    <h3 class="font-display text-xl text-offWhite uppercase">Sales & Negotiation</h3>
+                    <p class="text-mutedGray text-xs font-light leading-relaxed">Closing deals, building client trust, and driving revenue growth across competitive markets.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all space-y-4">
+                    <span class="font-mono text-metallicGold text-xs">02 / MANAGEMENT</span>
+                    <h3 class="font-display text-xl text-offWhite uppercase">Business Operations</h3>
+                    <p class="text-mutedGray text-xs font-light leading-relaxed">Streamlining day-to-day administrative and logistical workflows for maximum profitability.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all space-y-4">
+                    <span class="font-mono text-metallicGold text-xs">03 / DIGITAL</span>
+                    <h3 class="font-display text-xl text-offWhite uppercase">Social Media & Marketing</h3>
+                    <p class="text-mutedGray text-xs font-light leading-relaxed">Managing online brand presence, audience engagement, and promotional campaigns.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/10 hover:border-metallicGold/50 transition-all space-y-4">
+                    <span class="font-mono text-metallicGold text-xs">04 / COMMUNICATION</span>
+                    <h3 class="font-display text-xl text-offWhite uppercase">Customer Relations</h3>
+                    <p class="text-mutedGray text-xs font-light leading-relaxed">Fostering long-term client loyalty through professional communication and support.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="toolkit-education" class="py-28 px-6 md:px-12 bg-deepBlack border-t border-white/5">
+        <div class="max-w-7xl mx-auto space-y-20">
+            
+            <!-- Toolkit -->
+            <div class="space-y-12">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>08 / Digital Ecosystem</span>
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl tracking-tight text-offWhite uppercase">
+                        MY <span class="text-metallicGold">TOOLKIT</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                    <div class="glass-panel p-6 rounded-2xl text-center space-y-3 border border-white/10 hover:border-metallicGold/40 transition-all duration-300 hover-lift scroll-reveal group">
+                        <i class="fa-solid fa-wand-magic-sparkles text-2xl text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-display text-sm tracking-wider text-offWhite block uppercase">AI Tools</span>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl text-center space-y-3 border border-white/10 hover:border-metallicGold/40 transition-all duration-300 hover-lift scroll-reveal group" style="animation-delay: 0.05s;">
+                        <i class="fa-solid fa-palette text-2xl text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-display text-sm tracking-wider text-offWhite block uppercase">Canva</span>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl text-center space-y-3 border border-white/10 hover:border-metallicGold/40 transition-all duration-300 hover-lift scroll-reveal group" style="animation-delay: 0.1s;">
+                        <i class="fa-solid fa-share-nodes text-2xl text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-display text-sm tracking-wider text-offWhite block uppercase">Social Platforms</span>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl text-center space-y-3 border border-white/10 hover:border-metallicGold/40 transition-all duration-300 hover-lift scroll-reveal group" style="animation-delay: 0.15s;">
+                        <i class="fa-solid fa-bullseye text-2xl text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-display text-sm tracking-wider text-offWhite block uppercase">Marketing Tools</span>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl text-center space-y-3 border border-white/10 hover:border-metallicGold/40 transition-all duration-300 hover-lift scroll-reveal group" style="animation-delay: 0.2s;">
+                        <i class="fa-solid fa-globe text-2xl text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-display text-sm tracking-wider text-offWhite block uppercase">Website Mgmt</span>
+                    </div>
+                    <div class="glass-panel p-6 rounded-2xl text-center space-y-3 border border-white/10 hover:border-metallicGold/40 transition-all duration-300 hover-lift scroll-reveal group" style="animation-delay: 0.25s;">
+                        <i class="fa-solid fa-pen-clip text-2xl text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                        <span class="font-display text-sm tracking-wider text-offWhite block uppercase">Content Creation</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="space-y-12 pt-12 border-t border-white/5">
+                <div class="space-y-4">
+                    <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                        <span class="w-8 h-[1px] bg-metallicGold"></span>
+                        <span>09 / Academic Foundation</span>
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl tracking-tight text-offWhite uppercase">
+                        EDUCATION <span class="text-metallicGold">BACKGROUND</span>
+                    </h2>
+                </div>
+
+                <div class="glass-panel-gold p-8 sm:p-12 rounded-3xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <span class="text-xs font-mono text-metallicGold uppercase tracking-widest block">Institution of Study</span>
+                        <h3 class="font-display text-3xl sm:text-4xl text-offWhite uppercase">UNIVERSITY OF CENTRAL PUNJAB</h3>
+                        <p class="text-mutedGray text-base font-light leading-relaxed">
+                            Associate Degree Program in Computer Science (ADPCS). Built a rigorous academic foundation in computer science principles, data logic, and modern technological architecture.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-4 flex justify-lg-end">
+                        <div class="px-8 py-6 rounded-2xl bg-panelCharcoal border border-metallicGold/30 text-center space-y-1">
+                            <span class="font-display text-3xl text-metallicGold block">ADPCS</span>
+                            <span class="text-[10px] font-mono text-mutedGray uppercase tracking-widest">Computer Science</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="journey" class="py-20 sm:py-28 px-6 md:px-12 bg-richCharcoal border-t border-white/5 relative overflow-hidden">
+        <!-- Background Effects -->
+        <div class="absolute top-1/4 right-0 w-96 h-96 bg-metallicGold/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto space-y-12 sm:space-y-16 relative z-10">
+            
+            <div class="text-center space-y-6 scroll-reveal">
+                <div class="inline-flex items-center space-x-2 text-metallicGold font-mono text-xs uppercase tracking-widest">
+                    <span class="w-8 h-[1px] bg-metallicGold"></span>
+                    <span>10 / Career Progression</span>
+                    <span class="w-8 h-[1px] bg-metallicGold"></span>
+                </div>
+                <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight text-offWhite uppercase leading-tight">
+                    PROFESSIONAL <span class="text-metallicGold">JOURNEY</span>
+                </h2>
+                <p class="text-mutedGray text-sm sm:text-base max-w-2xl mx-auto font-light">
+                    A timeline of growth, experience, and continuous evolution across technology, design, and business domains.
+                </p>
+            </div>
+
+            <!-- Modern Timeline Cards -->
+            <div class="space-y-6 sm:space-y-8">
+                
+                <!-- Timeline Item 1: Education -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 scroll-reveal card-stack group">
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-metallicGold/20 to-metallicGold/5 border border-metallicGold/30 flex items-center justify-center text-metallicGold group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-graduation-cap text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-3 text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider mb-2">Foundation</span>
+                                    <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide group-hover:text-metallicGold transition-colors duration-300">University of Central Punjab</h3>
+                                </div>
+                                <span class="font-mono text-metallicGold text-xs bg-panelCharcoal px-3 py-1.5 rounded-lg border border-metallicGold/20">01</span>
+                            </div>
+                            <p class="text-mutedGray text-sm sm:text-base font-light leading-relaxed">
+                                Associate Degree Program in Computer Science (ADPCS) — Building foundational knowledge in programming, algorithms, and software development.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2: Graphic Design -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 scroll-reveal card-stack group" style="animation-delay: 0.1s;">
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-metallicGold/20 to-metallicGold/5 border border-metallicGold/30 flex items-center justify-center text-metallicGold group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-palette text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-3 text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider mb-2">3–4 Years Experience</span>
+                                    <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide group-hover:text-metallicGold transition-colors duration-300">Graphic Design & Canva</h3>
+                                </div>
+                                <span class="font-mono text-metallicGold text-xs bg-panelCharcoal px-3 py-1.5 rounded-lg border border-metallicGold/20">02</span>
+                            </div>
+                            <p class="text-mutedGray text-sm sm:text-base font-light leading-relaxed">
+                                Specialized creation of social media assets, marketing creatives, Instagram posts, reels covers, and professional brand visuals using Canva and design tools.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Canva</span>
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Social Media</span>
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Branding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3: Lexton Logistics -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 scroll-reveal card-stack group" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-metallicGold/20 to-metallicGold/5 border border-metallicGold/30 flex items-center justify-center text-metallicGold group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-truck-fast text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-3 text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider mb-2">Approx. 1 Year</span>
+                                    <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide group-hover:text-metallicGold transition-colors duration-300">Lexton Logistics</h3>
+                                </div>
+                                <span class="font-mono text-metallicGold text-xs bg-panelCharcoal px-3 py-1.5 rounded-lg border border-metallicGold/20">03</span>
+                            </div>
+                            <p class="text-mutedGray text-sm sm:text-base font-light leading-relaxed">
+                                Truck Dispatcher & Sales Agent managing freight operations, driver coordination, client negotiations, and lead generation in logistics industry.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Dispatch</span>
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Sales</span>
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Operations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4: Pak Car Bazar -->
+                <div class="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 hover:border-metallicGold/40 transition-all duration-300 scroll-reveal card-stack group" style="animation-delay: 0.3s;">
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-metallicGold/20 to-metallicGold/5 border border-metallicGold/30 flex items-center justify-center text-metallicGold group-hover:scale-110 transition-transform duration-300">
+                                <i class="fa-solid fa-car text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-3 text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-md bg-metallicGold/10 border border-metallicGold/30 text-metallicGold text-[10px] font-mono uppercase tracking-wider mb-2">Approx. 2 Years</span>
+                                    <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide group-hover:text-metallicGold transition-colors duration-300">Pak Car Bazar</h3>
+                                </div>
+                                <span class="font-mono text-metallicGold text-xs bg-panelCharcoal px-3 py-1.5 rounded-lg border border-metallicGold/20">04</span>
+                            </div>
+                            <p class="text-mutedGray text-sm sm:text-base font-light leading-relaxed">
+                                Manager & Social Media Manager leading automotive sales, marketing campaigns, website management, customer relations, and business operations.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Management</span>
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Marketing</span>
+                                <span class="text-[10px] font-mono text-mutedGray px-2 py-1 rounded bg-panelCharcoal border border-white/10">Social Media</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 5: Current - AI Specialist -->
+                <div class="glass-panel-gold p-6 sm:p-8 rounded-3xl border border-metallicGold/30 hover:border-metallicGold/50 transition-all duration-300 scroll-reveal card-stack group gold-glow" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col sm:flex-row gap-6 items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-metallicGold/30 to-metallicGold/10 border-2 border-metallicGold flex items-center justify-center text-metallicGold group-hover:scale-110 transition-transform duration-300 animate-pulse">
+                                <i class="fa-solid fa-brain text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 space-y-3 text-left">
+                            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                                <div>
+                                    <span class="inline-block px-3 py-1 rounded-md bg-metallicGold/20 border border-metallicGold/40 text-metallicGold text-[10px] font-mono uppercase tracking-wider mb-2">
+                                        <i class="fa-solid fa-circle animate-pulse text-[6px] mr-1"></i>Current Focus
+                                    </span>
+                                    <h3 class="font-display text-xl sm:text-2xl text-offWhite uppercase tracking-wide group-hover:text-metallicGold transition-colors duration-300">AI Specialist</h3>
+                                </div>
+                                <span class="font-mono text-metallicGold text-xs bg-panelCharcoal px-3 py-1.5 rounded-lg border border-metallicGold/40">05</span>
+                            </div>
+                            <p class="text-mutedGray text-sm sm:text-base font-light leading-relaxed">
+                                Integrating artificial intelligence, advanced prompt engineering, workflow automation, and modern digital solutions to accelerate business productivity and creative execution.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="text-[10px] font-mono text-metallicGold px-2 py-1 rounded bg-metallicGold/10 border border-metallicGold/30">AI & ML</span>
+                                <span class="text-[10px] font-mono text-metallicGold px-2 py-1 rounded bg-metallicGold/10 border border-metallicGold/30">Automation</span>
+                                <span class="text-[10px] font-mono text-metallicGold px-2 py-1 rounded bg-metallicGold/10 border border-metallicGold/30">Prompt Engineering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-28 px-6 md:px-12 bg-deepBlack border-t border-white/5 relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[40rem] h-[20rem] bg-metallicGold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto space-y-16 relative z-10 text-center">
+            
+            <div class="space-y-6">
+                <span class="px-4 py-2 rounded-full glass-panel border border-metallicGold/30 text-metallicGold text-xs font-mono tracking-widest uppercase inline-block">
+                    Initiate Collaboration
+                </span>
+                <h2 class="font-display text-6xl sm:text-7xl lg:text-8xl tracking-tight text-offWhite uppercase">
+                    AFNAN <span class="text-transparent bg-clip-text bg-gradient-to-r from-metallicGold via-amber-200 to-amber-500">ALVI</span>
+                </h2>
+                <p class="font-display text-2xl sm:text-3xl tracking-wide text-mutedGray uppercase">
+                    AI SPECIALIST
+                </p>
+                <div class="flex flex-wrap justify-center gap-3 font-mono text-xs text-metallicGold pt-2">
+                    <span>AI</span>
+                    <span>•</span>
+                    <span>DESIGN</span>
+                    <span>•</span>
+                    <span>SALES</span>
+                    <span>•</span>
+                    <span>BUSINESS</span>
+                </div>
+            </div>
+
+            <!-- Contact Information Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                <a href="mailto:afnanalvi.official@gmail.com" class="glass-panel p-6 rounded-2xl border border-white/10 space-y-2 hover:border-metallicGold/40 transition-all duration-300 hover-lift group text-left flex flex-col items-start">
+                    <i class="fa-solid fa-envelope text-metallicGold text-xl mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="text-[10px] font-mono text-mutedGray uppercase">Email</span>
+                    <span class="text-offWhite font-semibold text-xs tracking-wider break-all">afnanalvi.official@gmail.com</span>
+                </a>
+
+                <a href="tel:+923211814960" class="glass-panel p-6 rounded-2xl border border-white/10 space-y-2 hover:border-metallicGold/40 transition-all duration-300 hover-lift group text-left flex flex-col items-start">
+                    <i class="fa-solid fa-phone text-metallicGold text-xl mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="text-[10px] font-mono text-mutedGray uppercase">Phone</span>
+                    <span class="text-offWhite font-semibold text-xs tracking-wider">03211814960</span>
+                </a>
+
+                <a href="https://wa.me/923211814960" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl border border-white/10 space-y-2 hover:border-metallicGold/40 transition-all duration-300 hover-lift group text-left flex flex-col items-start">
+                    <i class="fa-brands fa-whatsapp text-metallicGold text-xl mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="text-[10px] font-mono text-mutedGray uppercase">WhatsApp</span>
+                    <span class="text-offWhite font-semibold text-xs tracking-wider">03211814960</span>
+                </a>
+
+                <a href="https://linkedin.com/in/afnan-alvi" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl border border-white/10 space-y-2 hover:border-metallicGold/40 transition-all duration-300 hover-lift group text-left flex flex-col items-start">
+                    <i class="fa-brands fa-linkedin text-metallicGold text-xl mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="text-[10px] font-mono text-mutedGray uppercase">LinkedIn</span>
+                    <span class="text-offWhite font-semibold text-xs tracking-wider">in/afnan-alvi</span>
+                </a>
+
+                <a href="https://instagram.com/afnan.alvi" target="_blank" rel="noopener noreferrer" class="glass-panel p-6 rounded-2xl border border-white/10 space-y-2 hover:border-metallicGold/40 transition-all duration-300 hover-lift group text-left flex flex-col items-start">
+                    <i class="fa-brands fa-instagram text-metallicGold text-xl mb-2 group-hover:scale-110 transition-transform duration-300"></i>
+                    <span class="text-[10px] font-mono text-mutedGray uppercase">Instagram</span>
+                    <span class="text-offWhite font-semibold text-xs tracking-wider">@afnan.alvi</span>
+                </a>
+            </div>
+
+            <div class="pt-12 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-mutedGray">
+                <span>© 2026 AFNAN ALVI. ALL RIGHTS RESERVED.</span>
+                <span class="text-metallicGold pt-4 sm:pt-0">PAKISTAN • GLOBAL DIGITAL SOLUTIONS</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Enhanced Professional Footer -->
+    <footer class="py-16 px-6 md:px-12 bg-richCharcoal border-t border-white/10 scroll-reveal">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 text-left">
+                <!-- About Column -->
+                <div class="space-y-4 text-left">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl overflow-hidden shadow-lg bg-white flex items-center justify-center">
+                            <img src="logo.jpeg" alt="Afnan Alvi Logo" class="w-full h-full object-cover">
+                        </div>
+                        <span class="font-display text-lg tracking-wider text-offWhite">AFNAN ALVI</span>
+                    </div>
+                    <p class="text-mutedGray text-sm font-light leading-relaxed text-left">
+                        AI Specialist, Graphic Designer & Business Strategist. Bridging technology, creativity, and commerce.
+                    </p>
+                    <div class="flex items-center space-x-1 text-xs font-mono">
+                        <div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                        <span class="text-mutedGray">Available for projects</span>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="space-y-4 text-left">
+                    <h3 class="font-display text-sm tracking-wider text-offWhite uppercase text-left">Quick Links</h3>
+                    <nav class="flex flex-col space-y-2 items-start">
+                        <a href="#about" class="text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 link-underline text-left">About Me</a>
+                        <a href="#expertise" class="text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 link-underline text-left">Expertise</a>
+                        <a href="#ai-ecosystem" class="text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 link-underline text-left">AI Ecosystem</a>
+                        <a href="#work" class="text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 link-underline text-left">Projects</a>
+                        <a href="#experience" class="text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 link-underline text-left">Experience</a>
+                        <a href="#journey" class="text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 link-underline text-left">Journey</a>
+                    </nav>
+                </div>
+
+                <!-- Services Column -->
+                <div class="space-y-4 text-left">
+                    <h3 class="font-display text-sm tracking-wider text-offWhite uppercase text-left">Services</h3>
+                    <ul class="flex flex-col space-y-2 text-mutedGray text-sm items-start text-left">
+                        <li class="hover:text-metallicGold transition-colors duration-300 text-left">• AI Solutions & Automation</li>
+                        <li class="hover:text-metallicGold transition-colors duration-300 text-left">• Graphic Design & Branding</li>
+                        <li class="hover:text-metallicGold transition-colors duration-300 text-left">• Social Media Management</li>
+                        <li class="hover:text-metallicGold transition-colors duration-300 text-left">• Business Strategy</li>
+                        <li class="hover:text-metallicGold transition-colors duration-300 text-left">• Sales & Operations</li>
+                    </ul>
+                </div>
+
+                <!-- Contact Column -->
+                <div class="space-y-4 text-left">
+                    <h3 class="font-display text-sm tracking-wider text-offWhite uppercase text-left">Get In Touch</h3>
+                    <div class="flex flex-col space-y-3 items-start text-left">
+                        <a href="mailto:afnanalvi.official@gmail.com" class="flex items-center space-x-2 text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 group text-left">
+                            <i class="fa-solid fa-envelope text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                            <span class="break-all">afnanalvi.official@gmail.com</span>
+                        </a>
+                        <a href="tel:+923211814960" class="flex items-center space-x-2 text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 group text-left">
+                            <i class="fa-solid fa-phone text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                            <span>03211814960</span>
+                        </a>
+                        <a href="https://wa.me/923211814960" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-mutedGray text-sm hover:text-metallicGold transition-colors duration-300 group text-left">
+                            <i class="fa-brands fa-whatsapp text-metallicGold group-hover:scale-110 transition-transform duration-300"></i>
+                            <span>WhatsApp: 03211814960</span>
+                        </a>
+                        <div class="flex items-center space-x-2 text-mutedGray text-sm text-left">
+                            <i class="fa-solid fa-location-dot text-metallicGold"></i>
+                            <span>Pakistan</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="https://linkedin.com/in/afnan-alvi" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-panel border border-white/10 hover:border-metallicGold/50 flex items-center justify-center text-mutedGray hover:text-metallicGold transition-all duration-300 hover-lift">
+                            <i class="fa-brands fa-linkedin text-lg"></i>
+                        </a>
+                        <a href="https://instagram.com/afnan.alvi" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-panel border border-white/10 hover:border-metallicGold/50 flex items-center justify-center text-mutedGray hover:text-metallicGold transition-all duration-300 hover-lift">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://twitter.com/afnanalvi" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-panel border border-white/10 hover:border-metallicGold/50 flex items-center justify-center text-mutedGray hover:text-metallicGold transition-all duration-300 hover-lift">
+                            <i class="fa-brands fa-twitter text-lg"></i>
+                        </a>
+                        <a href="https://github.com/afnanalvi" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg glass-panel border border-white/10 hover:border-metallicGold/50 flex items-center justify-center text-mutedGray hover:text-metallicGold transition-all duration-300 hover-lift">
+                            <i class="fa-brands fa-github text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs font-mono text-mutedGray">
+                    © 2026 AFNAN ALVI. ALL RIGHTS RESERVED.
+                </p>
+                <div class="flex items-center space-x-6 text-xs font-mono">
+                    <span class="text-metallicGold">PAKISTAN</span>
+                    <span class="text-mutedGray">•</span>
+                    <span class="text-mutedGray">GLOBAL DIGITAL SOLUTIONS</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('custom-cursor');
+        const cursorText = document.getElementById('cursor-text');
+
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+            cursor.style.opacity = '1';
+        });
+
+        // Hover effect for interactive elements
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '50px';
+                cursor.style.height = '50px';
+                cursor.style.backgroundColor = 'rgba(212, 175, 55, 0.2)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '32px';
+                cursor.style.height = '32px';
+                cursor.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const navContainer = document.getElementById('nav-container');
+            if (window.scrollY > 50) {
+                navContainer.classList.add('bg-deepBlack/90', 'border-metallicGold/30');
+            } else {
+                navContainer.classList.remove('bg-deepBlack/90', 'border-metallicGold/30');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+            });
+        });
+
+        // Interactive Identity Data Switching
+        const identityData = [
+            {
+                title: "AI SPECIALIST",
+                desc: "Leveraging advanced artificial intelligence tools, prompt engineering methodologies, and workflow automation to accelerate business productivity, creative execution, and digital solutions.",
+                tags: ["Prompt Engineering", "Workflow Automation", "Creative AI Solutions"]
+            },
+            {
+                title: "GRAPHIC DESIGNER",
+                desc: "3–4 years of specialized creative output in Canva and professional visual design. Crafting high-conversion social media graphics, Instagram posts, reels covers, and marketing assets.",
+                tags: ["Canva Mastery", "Social Media Creatives", "Brand Presentation"]
+            },
+            {
+                title: "SALES PROFESSIONAL",
+                desc: "Extensive commercial execution across automotive sales at Pak Car Bazar and freight logistics at Lexton Logistics. Expert in customer dealing, negotiation, and lead generation.",
+                tags: ["Vehicle Sales", "Negotiation", "Lead Generation"]
+            },
+            {
+                title: "BUSINESS & SOCIAL MEDIA MANAGER",
+                desc: "Directing day-to-day business operations, website management, and promotional campaigns with strategic commercial focus and digital audience engagement.",
+                tags: ["Business Operations", "Social Media Strategy", "Website Management"]
+            }
+        ];
+
+        function switchIdentity(index) {
+            const tabs = document.querySelectorAll('.identity-tab');
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add('border-metallicGold/40', 'bg-panelCharcoal');
+                    tab.classList.remove('border-white/10');
+                    tab.querySelector('i').style.opacity = '1';
+                } else {
+                    tab.classList.remove('border-metallicGold/40', 'bg-panelCharcoal');
+                    tab.classList.add('border-white/10');
+                    tab.querySelector('i').style.opacity = '0';
+                }
+            });
+
+            const data = identityData[index];
+            document.getElementById('id-title').innerText = data.title;
+            document.getElementById('id-desc').innerText = data.desc;
+            
+            const tagsContainer = document.getElementById('id-tags');
+            tagsContainer.innerHTML = '';
+            data.tags.forEach(tag => {
+                tagsContainer.innerHTML += `
+                    <div class="p-3 rounded-xl bg-panelCharcoal border border-white/10">
+                        <span class="text-[10px] font-mono text-metallicGold block uppercase">Capability</span>
+                        <span class="text-xs text-offWhite font-semibold">${tag}</span>
+                    </div>
+                `;
+            });
+        }
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-reveal elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right');
+            revealElements.forEach(el => observer.observe(el));
+        });
+
+        // Smooth Scroll Enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax Effect on Scroll (Subtle)
+        let ticking = false;
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrolled = window.pageYOffset;
+                    const parallaxElements = document.querySelectorAll('.parallax');
+                    parallaxElements.forEach(el => {
+                        const speed = el.dataset.speed || 0.5;
+                        el.style.transform = `translateY(${scrolled * speed}px)`;
+                    });
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // ============================================
+        // PREMIUM SCROLL ANIMATION SYSTEM
+        // ============================================
+
+        // Scroll Progress Indicator
+        function updateScrollProgress() {
+            const scrollProgress = document.getElementById('scroll-progress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        }
+
+        window.addEventListener('scroll', updateScrollProgress);
+        window.addEventListener('resize', updateScrollProgress);
+
+        // Navbar Scroll Enhancement
+        const navbar = document.getElementById('navbar');
+        const navContainer = document.getElementById('nav-container');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navContainer.classList.add('navbar-scrolled');
+            } else {
+                navContainer.classList.remove('navbar-scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+
+        // Intersection Observer for Scroll Animations
+        const animationObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        // Add a small delay for staggered animations
+                        setTimeout(() => {
+                            entry.target.classList.add('animated');
+                        }, index * 50);
+                    }
+                });
+            },
+            {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            }
+        );
+
+        // Observe all animation elements when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animate all scroll-reveal elements
+            const animateElements = document.querySelectorAll(
+                '.fade-up, .fade-down, .fade-left, .fade-right, ' +
+                '.scale-in, .blur-in, .image-reveal, .card-entrance, ' +
+                '.section-label, .section-heading, .section-description'
+            );
+            
+            animateElements.forEach(el => {
+                animationObserver.observe(el);
+            });
+
+            // Subtle Parallax Effect
+            let parallaxTicking = false;
+            const parallaxElements = document.querySelectorAll('.parallax-slow');
+            
+            if (parallaxElements.length > 0 && window.innerWidth > 768) {
+                window.addEventListener('scroll', () => {
+                    if (!parallaxTicking) {
+                        window.requestAnimationFrame(() => {
+                            const scrolled = window.pageYOffset;
+                            
+                            parallaxElements.forEach(el => {
+                                const speed = parseFloat(el.dataset.parallax) || 0.05;
+                                const yPos = -(scrolled * speed);
+                                el.style.transform = `translateY(${yPos}px)`;
+                            });
+                            
+                            parallaxTicking = false;
+                        });
+                        parallaxTicking = true;
+                    }
+                });
+            }
+
+            // Staggered Grid Animations
+            const grids = document.querySelectorAll('.grid');
+            grids.forEach(grid => {
+                const gridItems = grid.querySelectorAll('.card-entrance, .fade-up');
+                gridItems.forEach((item, index) => {
+                    if (index > 0) {
+                        item.style.transitionDelay = `${index * 80}ms`;
+                    }
+                });
+            });
+
+            // Image Lazy Loading with Animation
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.add('animated');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            images.forEach(img => imageObserver.observe(img));
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Performance: Pause animations when tab is not visible
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                document.body.style.animationPlayState = 'paused';
+            } else {
+                document.body.style.animationPlayState = 'running';
+            }
+        });
+    </script>
+</body>
+</html>
